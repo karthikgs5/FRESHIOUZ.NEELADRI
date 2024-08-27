@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <button class="catalogue-button" onclick="window.location.href='index.html'">Catalogue</button>
+            <div class="logo">Freshiouz</div>
+        </div>
+    </header>
+
+    <!-- Cart Content -->
+    <section class="cart-page container">
+        <h1>Your Cart</h1>
+        <div id="cartItems"></div>
+        <div class="cart-total" id="cartTotal"></div>
+        <button class="btn-primary" id="checkoutButton" onclick="openModal()">Proceed to Checkout</button>
+    </section>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkoutForm">
+                <label for="customerName">Name:</label>
+                <input type="text" id="customerName" required>
+                <label for="customerPhone">Phone Number:</label>
+                <input type="text" id="customerPhone" required>
+                <label for="customerAddress">Address (Optional):</label>
+                <input type="text" id="customerAddress">
+                <button type="button" class="btn-primary" onclick="submitOrder()">Submit Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

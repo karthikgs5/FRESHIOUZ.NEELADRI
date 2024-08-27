@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Products</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">Admin Panel</div>
+            <!-- <button onclick="window.location.href='index.html'" class="btn-primary">Go to Customer Page</button> -->
+        </div>
+    </header>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <button onclick="showSection('addProduct')">Add Product</button>
+        <button onclick="showSection('manageProducts')">Manage Products</button>
+    </aside>
+
+    <!-- Admin Content -->
+    <main class="admin-content">
+        <!-- Add Product Section -->
+        <section id="addProduct" class="admin-section">
+            <h1>Add New Product</h1>
+            <form id="addProductForm" onsubmit="addProduct(event)">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price</label>
+                    <input type="number" id="productPrice" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Image</label>
+                    <input type="file" id="productImage" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn-primary">Add Product</button>
+            </form>
+        </section>
+
+        <!-- Manage Products Section -->
+        <section id="manageProducts" class="admin-section">
+            <h1>Manage Products</h1>
+            <div id="productList"></div>
+        </section>
+    </main>
+
+    <script src="admin-scripts.js"></script>
+</body>
+</html>
